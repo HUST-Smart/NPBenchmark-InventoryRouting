@@ -1,0 +1,427 @@
+{
+ "periodNum": 6,
+ "depotNum": 1,
+ "vehicles": [
+  {
+   "capacity": 1711
+  }
+ ],
+ "nodes": [
+  {
+   "x": 188,
+   "y": 307,
+   "initQuantity": 2857,
+   "capacity": 9703,
+   "minLevel": 0,
+   "holdingCost": 0.3,
+   "demands": [
+    -1141,
+    -1141,
+    -1141,
+    -1141,
+    -1141,
+    -1141
+   ]
+  },
+  {
+   "x": 374,
+   "y": 351,
+   "initQuantity": 112,
+   "capacity": 168,
+   "minLevel": 0,
+   "holdingCost": 0.23,
+   "demands": [
+    56,
+    56,
+    56,
+    56,
+    56,
+    56
+   ]
+  },
+  {
+   "x": 296,
+   "y": 139,
+   "initQuantity": 88,
+   "capacity": 176,
+   "minLevel": 0,
+   "holdingCost": 0.32,
+   "demands": [
+    88,
+    88,
+    88,
+    88,
+    88,
+    88
+   ]
+  },
+  {
+   "x": 332,
+   "y": 126,
+   "initQuantity": 17,
+   "capacity": 34,
+   "minLevel": 0,
+   "holdingCost": 0.33,
+   "demands": [
+    17,
+    17,
+    17,
+    17,
+    17,
+    17
+   ]
+  },
+  {
+   "x": 432,
+   "y": 79,
+   "initQuantity": 33,
+   "capacity": 66,
+   "minLevel": 0,
+   "holdingCost": 0.23,
+   "demands": [
+    33,
+    33,
+    33,
+    33,
+    33,
+    33
+   ]
+  },
+  {
+   "x": 488,
+   "y": 442,
+   "initQuantity": 24,
+   "capacity": 36,
+   "minLevel": 0,
+   "holdingCost": 0.18,
+   "demands": [
+    12,
+    12,
+    12,
+    12,
+    12,
+    12
+   ]
+  },
+  {
+   "x": 46,
+   "y": 341,
+   "initQuantity": 118,
+   "capacity": 177,
+   "minLevel": 0,
+   "holdingCost": 0.29,
+   "demands": [
+    59,
+    59,
+    59,
+    59,
+    59,
+    59
+   ]
+  },
+  {
+   "x": 302,
+   "y": 147,
+   "initQuantity": 53,
+   "capacity": 106,
+   "minLevel": 0,
+   "holdingCost": 0.42,
+   "demands": [
+    53,
+    53,
+    53,
+    53,
+    53,
+    53
+   ]
+  },
+  {
+   "x": 23,
+   "y": 181,
+   "initQuantity": 59,
+   "capacity": 118,
+   "minLevel": 0,
+   "holdingCost": 0.42,
+   "demands": [
+    59,
+    59,
+    59,
+    59,
+    59,
+    59
+   ]
+  },
+  {
+   "x": 22,
+   "y": 127,
+   "initQuantity": 91,
+   "capacity": 182,
+   "minLevel": 0,
+   "holdingCost": 0.24,
+   "demands": [
+    91,
+    91,
+    91,
+    91,
+    91,
+    91
+   ]
+  },
+  {
+   "x": 81,
+   "y": 497,
+   "initQuantity": 32,
+   "capacity": 64,
+   "minLevel": 0,
+   "holdingCost": 0.43,
+   "demands": [
+    32,
+    32,
+    32,
+    32,
+    32,
+    32
+   ]
+  },
+  {
+   "x": 95,
+   "y": 442,
+   "initQuantity": 94,
+   "capacity": 141,
+   "minLevel": 0,
+   "holdingCost": 0.18,
+   "demands": [
+    47,
+    47,
+    47,
+    47,
+    47,
+    47
+   ]
+  },
+  {
+   "x": 433,
+   "y": 165,
+   "initQuantity": 126,
+   "capacity": 189,
+   "minLevel": 0,
+   "holdingCost": 0.22,
+   "demands": [
+    63,
+    63,
+    63,
+    63,
+    63,
+    63
+   ]
+  },
+  {
+   "x": 469,
+   "y": 31,
+   "initQuantity": 42,
+   "capacity": 63,
+   "minLevel": 0,
+   "holdingCost": 0.24,
+   "demands": [
+    21,
+    21,
+    21,
+    21,
+    21,
+    21
+   ]
+  },
+  {
+   "x": 330,
+   "y": 255,
+   "initQuantity": 23,
+   "capacity": 46,
+   "minLevel": 0,
+   "holdingCost": 0.31,
+   "demands": [
+    23,
+    23,
+    23,
+    23,
+    23,
+    23
+   ]
+  },
+  {
+   "x": 453,
+   "y": 66,
+   "initQuantity": 74,
+   "capacity": 111,
+   "minLevel": 0,
+   "holdingCost": 0.22,
+   "demands": [
+    37,
+    37,
+    37,
+    37,
+    37,
+    37
+   ]
+  },
+  {
+   "x": 238,
+   "y": 455,
+   "initQuantity": 91,
+   "capacity": 182,
+   "minLevel": 0,
+   "holdingCost": 0.38,
+   "demands": [
+    91,
+    91,
+    91,
+    91,
+    91,
+    91
+   ]
+  },
+  {
+   "x": 368,
+   "y": 229,
+   "initQuantity": 154,
+   "capacity": 231,
+   "minLevel": 0,
+   "holdingCost": 0.13,
+   "demands": [
+    77,
+    77,
+    77,
+    77,
+    77,
+    77
+   ]
+  },
+  {
+   "x": 3,
+   "y": 60,
+   "initQuantity": 24,
+   "capacity": 36,
+   "minLevel": 0,
+   "holdingCost": 0.43,
+   "demands": [
+    12,
+    12,
+    12,
+    12,
+    12,
+    12
+   ]
+  },
+  {
+   "x": 420,
+   "y": 207,
+   "initQuantity": 44,
+   "capacity": 66,
+   "minLevel": 0,
+   "holdingCost": 0.37,
+   "demands": [
+    22,
+    22,
+    22,
+    22,
+    22,
+    22
+   ]
+  },
+  {
+   "x": 385,
+   "y": 346,
+   "initQuantity": 34,
+   "capacity": 68,
+   "minLevel": 0,
+   "holdingCost": 0.17,
+   "demands": [
+    34,
+    34,
+    34,
+    34,
+    34,
+    34
+   ]
+  },
+  {
+   "x": 69,
+   "y": 76,
+   "initQuantity": 36,
+   "capacity": 54,
+   "minLevel": 0,
+   "holdingCost": 0.45,
+   "demands": [
+    18,
+    18,
+    18,
+    18,
+    18,
+    18
+   ]
+  },
+  {
+   "x": 148,
+   "y": 186,
+   "initQuantity": 88,
+   "capacity": 132,
+   "minLevel": 0,
+   "holdingCost": 0.46,
+   "demands": [
+    44,
+    44,
+    44,
+    44,
+    44,
+    44
+   ]
+  },
+  {
+   "x": 322,
+   "y": 339,
+   "initQuantity": 45,
+   "capacity": 90,
+   "minLevel": 0,
+   "holdingCost": 0.22,
+   "demands": [
+    45,
+    45,
+    45,
+    45,
+    45,
+    45
+   ]
+  },
+  {
+   "x": 204,
+   "y": 436,
+   "initQuantity": 164,
+   "capacity": 246,
+   "minLevel": 0,
+   "holdingCost": 0.28,
+   "demands": [
+    82,
+    82,
+    82,
+    82,
+    82,
+    82
+   ]
+  },
+  {
+   "x": 250,
+   "y": 391,
+   "initQuantity": 50,
+   "capacity": 75,
+   "minLevel": 0,
+   "holdingCost": 0.21,
+   "demands": [
+    25,
+    25,
+    25,
+    25,
+    25,
+    25
+   ]
+  }
+ ]
+}

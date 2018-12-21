@@ -18,6 +18,50 @@ using namespace std;
 
 namespace szx {
 
+// EXTEND[szx][5]: read it from InstanceList.txt.
+static const vector<String> instList({
+    "abs.v1h3c1n5.1", "abs.v1h3c1n5.2", "abs.v1h3c1n5.3", "abs.v1h3c1n5.4", "abs.v1h3c1n5.5",
+    "abs.v1h3c1n10.1", "abs.v1h3c1n10.2", "abs.v1h3c1n10.3", "abs.v1h3c1n10.4", "abs.v1h3c1n10.5",
+    "abs.v1h3c1n15.1", "abs.v1h3c1n15.2", "abs.v1h3c1n15.3", "abs.v1h3c1n15.4", "abs.v1h3c1n15.5",
+    "abs.v1h3c1n20.1", "abs.v1h3c1n20.2", "abs.v1h3c1n20.3", "abs.v1h3c1n20.4", "abs.v1h3c1n20.5",
+    "abs.v1h3c1n25.1", "abs.v1h3c1n25.2", "abs.v1h3c1n25.3", "abs.v1h3c1n25.4", "abs.v1h3c1n25.5",
+    "abs.v1h3c1n30.1", "abs.v1h3c1n30.2", "abs.v1h3c1n30.3", "abs.v1h3c1n30.4", "abs.v1h3c1n30.5",
+    "abs.v1h3c1n35.1", "abs.v1h3c1n35.2", "abs.v1h3c1n35.3", "abs.v1h3c1n35.4", "abs.v1h3c1n35.5",
+    "abs.v1h3c1n40.1", "abs.v1h3c1n40.2", "abs.v1h3c1n40.3", "abs.v1h3c1n40.4", "abs.v1h3c1n40.5",
+    "abs.v1h3c1n45.1", "abs.v1h3c1n45.2", "abs.v1h3c1n45.3", "abs.v1h3c1n45.4", "abs.v1h3c1n45.5",
+    "abs.v1h3c1n50.1", "abs.v1h3c1n50.2", "abs.v1h3c1n50.3", "abs.v1h3c1n50.4", "abs.v1h3c1n50.5",
+    "abs.v1h6c1n5.1", "abs.v1h6c1n5.2", "abs.v1h6c1n5.3", "abs.v1h6c1n5.4", "abs.v1h6c1n5.5",
+    "abs.v1h6c1n10.1", "abs.v1h6c1n10.2", "abs.v1h6c1n10.3", "abs.v1h6c1n10.4", "abs.v1h6c1n10.5",
+    "abs.v1h6c1n15.1", "abs.v1h6c1n15.2", "abs.v1h6c1n15.3", "abs.v1h6c1n15.4", "abs.v1h6c1n15.5",
+    "abs.v1h6c1n20.1", "abs.v1h6c1n20.2", "abs.v1h6c1n20.3", "abs.v1h6c1n20.4", "abs.v1h6c1n20.5",
+    "abs.v1h6c1n25.1", "abs.v1h6c1n25.2", "abs.v1h6c1n25.3", "abs.v1h6c1n25.4", "abs.v1h6c1n25.5",
+    "abs.v1h6c1n30.1", "abs.v1h6c1n30.2", "abs.v1h6c1n30.3", "abs.v1h6c1n30.4", "abs.v1h6c1n30.5",
+
+    "abs.v1h3c2n5.1", "abs.v1h3c2n5.2", "abs.v1h3c2n5.3", "abs.v1h3c2n5.4", "abs.v1h3c2n5.5",
+    "abs.v1h3c2n10.1", "abs.v1h3c2n10.2", "abs.v1h3c2n10.3", "abs.v1h3c2n10.4", "abs.v1h3c2n10.5",
+    "abs.v1h3c2n15.1", "abs.v1h3c2n15.2", "abs.v1h3c2n15.3", "abs.v1h3c2n15.4", "abs.v1h3c2n15.5",
+    "abs.v1h3c2n20.1", "abs.v1h3c2n20.2", "abs.v1h3c2n20.3", "abs.v1h3c2n20.4", "abs.v1h3c2n20.5",
+    "abs.v1h3c2n25.1", "abs.v1h3c2n25.2", "abs.v1h3c2n25.3", "abs.v1h3c2n25.4", "abs.v1h3c2n25.5",
+    "abs.v1h3c2n30.1", "abs.v1h3c2n30.2", "abs.v1h3c2n30.3", "abs.v1h3c2n30.4", "abs.v1h3c2n30.5",
+    "abs.v1h3c2n35.1", "abs.v1h3c2n35.2", "abs.v1h3c2n35.3", "abs.v1h3c2n35.4", "abs.v1h3c2n35.5",
+    "abs.v1h3c2n40.1", "abs.v1h3c2n40.2", "abs.v1h3c2n40.3", "abs.v1h3c2n40.4", "abs.v1h3c2n40.5",
+    "abs.v1h3c2n45.1", "abs.v1h3c2n45.2", "abs.v1h3c2n45.3", "abs.v1h3c2n45.4", "abs.v1h3c2n45.5",
+    "abs.v1h3c2n50.1", "abs.v1h3c2n50.2", "abs.v1h3c2n50.3", "abs.v1h3c2n50.4", "abs.v1h3c2n50.5",
+    "abs.v1h6c2n5.1", "abs.v1h6c2n5.2", "abs.v1h6c2n5.3", "abs.v1h6c2n5.4", "abs.v1h6c2n5.5",
+    "abs.v1h6c2n10.1", "abs.v1h6c2n10.2", "abs.v1h6c2n10.3", "abs.v1h6c2n10.4", "abs.v1h6c2n10.5",
+    "abs.v1h6c2n15.1", "abs.v1h6c2n15.2", "abs.v1h6c2n15.3", "abs.v1h6c2n15.4", "abs.v1h6c2n15.5",
+    "abs.v1h6c2n20.1", "abs.v1h6c2n20.2", "abs.v1h6c2n20.3", "abs.v1h6c2n20.4", "abs.v1h6c2n20.5",
+    "abs.v1h6c2n25.1", "abs.v1h6c2n25.2", "abs.v1h6c2n25.3", "abs.v1h6c2n25.4", "abs.v1h6c2n25.5",
+    "abs.v1h6c2n30.1", "abs.v1h6c2n30.2", "abs.v1h6c2n30.3", "abs.v1h6c2n30.4", "abs.v1h6c2n30.5",
+
+    "abs.v1h6c1n50.1", "abs.v1h6c1n50.2", "abs.v1h6c1n50.3", "abs.v1h6c1n50.4", "abs.v1h6c1n50.5", "abs.v1h6c1n50.6", "abs.v1h6c1n50.7", "abs.v1h6c1n50.8", "abs.v1h6c1n50.9", "abs.v1h6c1n50.10",
+    "abs.v1h6c1n100.1", "abs.v1h6c1n100.2", "abs.v1h6c1n100.3", "abs.v1h6c1n100.4", "abs.v1h6c1n100.5", "abs.v1h6c1n100.6", "abs.v1h6c1n100.7", "abs.v1h6c1n100.8", "abs.v1h6c1n100.9", "abs.v1h6c1n100.10",
+    "abs.v1h6c1n200.1", "abs.v1h6c1n200.2", "abs.v1h6c1n200.3", "abs.v1h6c1n200.4", "abs.v1h6c1n200.5", "abs.v1h6c1n200.6", "abs.v1h6c1n200.7", "abs.v1h6c1n200.8", "abs.v1h6c1n200.9", "abs.v1h6c1n200.10",
+    "abs.v1h6c2n50.1", "abs.v1h6c2n50.2", "abs.v1h6c2n50.3", "abs.v1h6c2n50.4", "abs.v1h6c2n50.5", "abs.v1h6c2n50.6", "abs.v1h6c2n50.7", "abs.v1h6c2n50.8", "abs.v1h6c2n50.9", "abs.v1h6c2n50.10",
+    "abs.v1h6c2n100.1", "abs.v1h6c2n100.2", "abs.v1h6c2n100.3", "abs.v1h6c2n100.4", "abs.v1h6c2n100.5", "abs.v1h6c2n100.6", "abs.v1h6c2n100.7", "abs.v1h6c2n100.8", "abs.v1h6c2n100.9", "abs.v1h6c2n100.10",
+    "abs.v1h6c2n200.1", "abs.v1h6c2n200.2", "abs.v1h6c2n200.3", "abs.v1h6c2n200.4", "abs.v1h6c2n200.5", "abs.v1h6c2n200.6", "abs.v1h6c2n200.7", "abs.v1h6c2n200.8", "abs.v1h6c2n200.9", "abs.v1h6c2n200.10"
+});
+
 void Simulator::initDefaultEnvironment() {
     Solver::Environment env;
     env.save(Env::DefaultEnvPath());
@@ -99,7 +143,7 @@ void Simulator::run(const String &envPath) {
 void Simulator::debug() {
     Task task;
     task.instSet = "";
-    task.instId = "rand.g4b2f8h480";
+    task.instId = "abs.v1h3c1n5.1";
     task.randSeed = "1500972793";
     //task.randSeed = to_string(RandSeed::generate());
     task.timeout = "180";
@@ -117,7 +161,7 @@ void Simulator::benchmark(int repeat) {
     task.instSet = "";
     //task.timeout = "180";
     //task.maxIter = "1000000000";
-    task.timeout = "3600";
+    task.timeout = "1800";
     //task.maxIter = "1000000000";
     task.jobNum = "1";
     task.cfgPath = Env::DefaultCfgPath();
@@ -125,8 +169,6 @@ void Simulator::benchmark(int repeat) {
 
     random_device rd;
     mt19937 rgen(rd());
-    // EXTEND[szx][5]: read it from InstanceList.txt.
-    vector<String> instList({ "rand.g4b2f8h480", "rand.g80b25f200h1440" });
     for (int i = 0; i < repeat; ++i) {
         //shuffle(instList.begin(), instList.end(), rgen);
         for (auto inst = instList.begin(); inst != instList.end(); ++inst) {
@@ -143,7 +185,7 @@ void Simulator::parallelBenchmark(int repeat) {
     task.instSet = "";
     //task.timeout = "180";
     //task.maxIter = "1000000000";
-    task.timeout = "3600";
+    task.timeout = "1800";
     //task.maxIter = "1000000000";
     task.jobNum = "1";
     task.cfgPath = Env::DefaultCfgPath();
@@ -153,8 +195,6 @@ void Simulator::parallelBenchmark(int repeat) {
 
     random_device rd;
     mt19937 rgen(rd());
-    // EXTEND[szx][5]: read it from InstanceList.txt.
-    vector<String> instList({ "rand.g4b2f8h480", "rand.g80b25f200h1440" });
     for (int i = 0; i < repeat; ++i) {
         //shuffle(instList.begin(), instList.end(), rgen);
         for (auto inst = instList.begin(); inst != instList.end(); ++inst) {
@@ -170,43 +210,76 @@ void Simulator::parallelBenchmark(int repeat) {
 void Simulator::generateInstance(const InstanceTrait &trait) {
     Random rand;
 
-    int gateNum = rand.pick(trait.gateNum.begin, trait.gateNum.end);
-    int flightNum = rand.pick(trait.flightNum.begin, trait.flightNum.end);
-
     Problem::Input input;
-    input.mutable_airport()->set_bridgenum(rand.pick(trait.bridgeNum.begin, trait.bridgeNum.end));
-    for (int g = 0; g < gateNum; ++g) {
-        auto &gate(*input.mutable_airport()->add_gates());
-        gate.set_id(g);
-        gate.set_mingap(30);
-    }
-    for (auto f = 0; f < flightNum; ++f) {
-        auto &flight(*input.add_flights());
-        flight.set_id(f);
 
-        int turnaroudLen = rand.pick(trait.turnaroundLen.begin, trait.turnaroundLen.end);
-        if (turnaroudLen > 3 * 60) { // reduce long turnaround.
-            turnaroudLen = rand.pick(trait.turnaroundLen.begin, trait.turnaroundLen.end);
-        }
-        int turnaroundBegin = rand.pick(0, trait.horizonLen - turnaroudLen);
-        flight.mutable_turnaround()->set_begin(turnaroundBegin);
-        flight.mutable_turnaround()->set_end(turnaroundBegin + turnaroudLen);
-
-        int incompatibleGateNum = rand.pick(trait.incompatibleGateNumPerFlight.begin, trait.incompatibleGateNumPerFlight.end);
-        Sampling sample(rand, incompatibleGateNum);
-        List<int> pickedGates(incompatibleGateNum + 1);
-        for (auto g = 0; g < gateNum; ++g) { pickedGates[sample.isPicked()] = g; }
-        for (auto ig = 1; ig <= incompatibleGateNum; ++ig) {
-            flight.add_incompatiblegates(pickedGates[ig]);
-        }
-    }
+    // EXTEND[szx][5]: generate random instances.
 
     ostringstream path;
-    path << InstanceDir() << "rand.g" << input.airport().gates().size()
-        << "b" << input.airport().bridgenum()
-        << "f" << input.flights().size()
-        << "h" << trait.horizonLen << ".json";
+    path << InstanceDir() << "rand.h" << input.periodnum()
+        << "c" << trait.holdingCostScale
+        << "n" << input.nodes().size() << ".json";
     save(path.str(), input);
+}
+
+void Simulator::convertInstanceToPb(const String &fileName, const InstanceTrait &trait) {
+    ifstream ifs(InstanceDir() + "abs/" + fileName + ".txt");
+    if (!ifs.is_open()) { return; }
+
+    Problem::Input input;
+
+    int nodeNum, periodNum, vehicleCapacity;
+    ifs >> nodeNum >> periodNum >> vehicleCapacity;
+    input.set_periodnum(periodNum);
+    input.set_depotnum(trait.depotNum);
+
+    vehicleCapacity /= trait.vehicleNum; // all vehicles share the capacity.
+    for (int v = 0; v < trait.vehicleNum; ++v) {
+        auto &vehicle(*input.add_vehicles());
+        vehicle.set_capacity(vehicleCapacity);
+    }
+
+    int id;
+    double x;
+    double y;
+    int initialQuantity;
+    int capacity;
+    int minLevel = 0;
+    double holdingCost;
+    int unitDemand;
+
+    auto setNodeInformation = [&](pb::Node &node) {
+        node.set_x(x);
+        node.set_y(y);
+        node.set_initquantity(initialQuantity);
+        node.set_capacity(capacity);
+        node.set_minlevel(minLevel);
+        node.set_holdingcost(holdingCost);
+        for (int p = 0; p < periodNum; ++p) { node.add_demands(unitDemand); }
+    };
+
+    // supplier.
+    auto &supplier(*input.add_nodes());
+    ifs >> id >> x >> y >> initialQuantity >> unitDemand >> holdingCost;
+    capacity = initialQuantity + unitDemand * periodNum;
+    unitDemand = -unitDemand;
+    setNodeInformation(supplier);
+    // customers.
+    for (int i = 1; i < nodeNum; ++i) {
+        auto &node(*input.add_nodes());
+        ifs >> id >> x >> y >> initialQuantity >> capacity >> minLevel >> unitDemand >> holdingCost;
+        setNodeInformation(node);
+    }
+    ifs.close();
+
+    ostringstream path;
+    path << InstanceDir() << fileName << ".json";
+    save(path.str(), input);
+}
+
+void Simulator::convertAllInstancesToPb(const InstanceTrait &trait) {
+    for (auto i = instList.begin(); i != instList.end(); ++i) {
+        convertInstanceToPb(*i, trait);
+    }
 }
 
 }

@@ -1,0 +1,154 @@
+{
+ "periodNum": 3,
+ "depotNum": 1,
+ "vehicles": [
+  {
+   "capacity": 817
+  }
+ ],
+ "nodes": [
+  {
+   "x": 389,
+   "y": 474,
+   "initQuantity": 1318,
+   "capacity": 2953,
+   "minLevel": 0,
+   "holdingCost": 0.03,
+   "demands": [
+    -545,
+    -545,
+    -545
+   ]
+  },
+  {
+   "x": 304,
+   "y": 360,
+   "initQuantity": 150,
+   "capacity": 225,
+   "minLevel": 0,
+   "holdingCost": 0.04,
+   "demands": [
+    75,
+    75,
+    75
+   ]
+  },
+  {
+   "x": 461,
+   "y": 282,
+   "initQuantity": 36,
+   "capacity": 54,
+   "minLevel": 0,
+   "holdingCost": 0.01,
+   "demands": [
+    18,
+    18,
+    18
+   ]
+  },
+  {
+   "x": 269,
+   "y": 326,
+   "initQuantity": 72,
+   "capacity": 144,
+   "minLevel": 0,
+   "holdingCost": 0.02,
+   "demands": [
+    72,
+    72,
+    72
+   ]
+  },
+  {
+   "x": 419,
+   "y": 64,
+   "initQuantity": 100,
+   "capacity": 150,
+   "minLevel": 0,
+   "holdingCost": 0.04,
+   "demands": [
+    50,
+    50,
+    50
+   ]
+  },
+  {
+   "x": 39,
+   "y": 410,
+   "initQuantity": 75,
+   "capacity": 150,
+   "minLevel": 0,
+   "holdingCost": 0.03,
+   "demands": [
+    75,
+    75,
+    75
+   ]
+  },
+  {
+   "x": 159,
+   "y": 153,
+   "initQuantity": 39,
+   "capacity": 78,
+   "minLevel": 0,
+   "holdingCost": 0.05,
+   "demands": [
+    39,
+    39,
+    39
+   ]
+  },
+  {
+   "x": 11,
+   "y": 470,
+   "initQuantity": 118,
+   "capacity": 177,
+   "minLevel": 0,
+   "holdingCost": 0.03,
+   "demands": [
+    59,
+    59,
+    59
+   ]
+  },
+  {
+   "x": 103,
+   "y": 325,
+   "initQuantity": 77,
+   "capacity": 154,
+   "minLevel": 0,
+   "holdingCost": 0.03,
+   "demands": [
+    77,
+    77,
+    77
+   ]
+  },
+  {
+   "x": 121,
+   "y": 226,
+   "initQuantity": 54,
+   "capacity": 108,
+   "minLevel": 0,
+   "holdingCost": 0.04,
+   "demands": [
+    54,
+    54,
+    54
+   ]
+  },
+  {
+   "x": 124,
+   "y": 33,
+   "initQuantity": 52,
+   "capacity": 78,
+   "minLevel": 0,
+   "holdingCost": 0.04,
+   "demands": [
+    26,
+    26,
+    26
+   ]
+  }
+ ]
+}

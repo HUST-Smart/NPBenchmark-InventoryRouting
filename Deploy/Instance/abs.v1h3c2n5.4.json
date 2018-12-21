@@ -1,0 +1,89 @@
+{
+ "periodNum": 3,
+ "depotNum": 1,
+ "vehicles": [
+  {
+   "capacity": 268
+  }
+ ],
+ "nodes": [
+  {
+   "x": 119,
+   "y": 168,
+   "initQuantity": 372,
+   "capacity": 909,
+   "minLevel": 0,
+   "holdingCost": 0.03,
+   "demands": [
+    -179,
+    -179,
+    -179
+   ]
+  },
+  {
+   "x": 191,
+   "y": 336,
+   "initQuantity": 53,
+   "capacity": 106,
+   "minLevel": 0,
+   "holdingCost": 0.02,
+   "demands": [
+    53,
+    53,
+    53
+   ]
+  },
+  {
+   "x": 69,
+   "y": 349,
+   "initQuantity": 21,
+   "capacity": 42,
+   "minLevel": 0,
+   "holdingCost": 0.02,
+   "demands": [
+    21,
+    21,
+    21
+   ]
+  },
+  {
+   "x": 94,
+   "y": 235,
+   "initQuantity": 24,
+   "capacity": 48,
+   "minLevel": 0,
+   "holdingCost": 0.02,
+   "demands": [
+    24,
+    24,
+    24
+   ]
+  },
+  {
+   "x": 422,
+   "y": 279,
+   "initQuantity": 67,
+   "capacity": 134,
+   "minLevel": 0,
+   "holdingCost": 0.02,
+   "demands": [
+    67,
+    67,
+    67
+   ]
+  },
+  {
+   "x": 153,
+   "y": 108,
+   "initQuantity": 28,
+   "capacity": 42,
+   "minLevel": 0,
+   "holdingCost": 0.04,
+   "demands": [
+    14,
+    14,
+    14
+   ]
+  }
+ ]
+}

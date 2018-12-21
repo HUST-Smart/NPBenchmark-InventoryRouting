@@ -1,0 +1,154 @@
+{
+ "periodNum": 3,
+ "depotNum": 1,
+ "vehicles": [
+  {
+   "capacity": 952
+  }
+ ],
+ "nodes": [
+  {
+   "x": 444,
+   "y": 237,
+   "initQuantity": 1583,
+   "capacity": 3488,
+   "minLevel": 0,
+   "holdingCost": 0.03,
+   "demands": [
+    -635,
+    -635,
+    -635
+   ]
+  },
+  {
+   "x": 152,
+   "y": 180,
+   "initQuantity": 87,
+   "capacity": 174,
+   "minLevel": 0,
+   "holdingCost": 0.02,
+   "demands": [
+    87,
+    87,
+    87
+   ]
+  },
+  {
+   "x": 230,
+   "y": 141,
+   "initQuantity": 14,
+   "capacity": 28,
+   "minLevel": 0,
+   "holdingCost": 0.03,
+   "demands": [
+    14,
+    14,
+    14
+   ]
+  },
+  {
+   "x": 134,
+   "y": 163,
+   "initQuantity": 172,
+   "capacity": 258,
+   "minLevel": 0,
+   "holdingCost": 0.03,
+   "demands": [
+    86,
+    86,
+    86
+   ]
+  },
+  {
+   "x": 459,
+   "y": 282,
+   "initQuantity": 75,
+   "capacity": 150,
+   "minLevel": 0,
+   "holdingCost": 0.02,
+   "demands": [
+    75,
+    75,
+    75
+   ]
+  },
+  {
+   "x": 269,
+   "y": 455,
+   "initQuantity": 84,
+   "capacity": 126,
+   "minLevel": 0,
+   "holdingCost": 0.02,
+   "demands": [
+    42,
+    42,
+    42
+   ]
+  },
+  {
+   "x": 79,
+   "y": 326,
+   "initQuantity": 69,
+   "capacity": 138,
+   "minLevel": 0,
+   "holdingCost": 0.03,
+   "demands": [
+    69,
+    69,
+    69
+   ]
+  },
+  {
+   "x": 5,
+   "y": 235,
+   "initQuantity": 158,
+   "capacity": 237,
+   "minLevel": 0,
+   "holdingCost": 0.04,
+   "demands": [
+    79,
+    79,
+    79
+   ]
+  },
+  {
+   "x": 51,
+   "y": 412,
+   "initQuantity": 86,
+   "capacity": 129,
+   "minLevel": 0,
+   "holdingCost": 0.04,
+   "demands": [
+    43,
+    43,
+    43
+   ]
+  },
+  {
+   "x": 310,
+   "y": 113,
+   "initQuantity": 77,
+   "capacity": 154,
+   "minLevel": 0,
+   "holdingCost": 0.02,
+   "demands": [
+    77,
+    77,
+    77
+   ]
+  },
+  {
+   "x": 312,
+   "y": 266,
+   "initQuantity": 126,
+   "capacity": 189,
+   "minLevel": 0,
+   "holdingCost": 0.04,
+   "demands": [
+    63,
+    63,
+    63
+   ]
+  }
+ ]
+}

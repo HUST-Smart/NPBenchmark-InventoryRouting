@@ -1,0 +1,154 @@
+{
+ "periodNum": 3,
+ "depotNum": 1,
+ "vehicles": [
+  {
+   "capacity": 822
+  }
+ ],
+ "nodes": [
+  {
+   "x": 279,
+   "y": 449,
+   "initQuantity": 1301,
+   "capacity": 2945,
+   "minLevel": 0,
+   "holdingCost": 0.3,
+   "demands": [
+    -548,
+    -548,
+    -548
+   ]
+  },
+  {
+   "x": 108,
+   "y": 221,
+   "initQuantity": 51,
+   "capacity": 102,
+   "minLevel": 0,
+   "holdingCost": 0.2,
+   "demands": [
+    51,
+    51,
+    51
+   ]
+  },
+  {
+   "x": 423,
+   "y": 64,
+   "initQuantity": 26,
+   "capacity": 52,
+   "minLevel": 0,
+   "holdingCost": 0.19,
+   "demands": [
+    26,
+    26,
+    26
+   ]
+  },
+  {
+   "x": 38,
+   "y": 152,
+   "initQuantity": 44,
+   "capacity": 88,
+   "minLevel": 0,
+   "holdingCost": 0.24,
+   "demands": [
+    44,
+    44,
+    44
+   ]
+  },
+  {
+   "x": 339,
+   "y": 128,
+   "initQuantity": 91,
+   "capacity": 182,
+   "minLevel": 0,
+   "holdingCost": 0.22,
+   "demands": [
+    91,
+    91,
+    91
+   ]
+  },
+  {
+   "x": 78,
+   "y": 320,
+   "initQuantity": 102,
+   "capacity": 153,
+   "minLevel": 0,
+   "holdingCost": 0.4,
+   "demands": [
+    51,
+    51,
+    51
+   ]
+  },
+  {
+   "x": 319,
+   "y": 306,
+   "initQuantity": 69,
+   "capacity": 138,
+   "minLevel": 0,
+   "holdingCost": 0.45,
+   "demands": [
+    69,
+    69,
+    69
+   ]
+  },
+  {
+   "x": 23,
+   "y": 440,
+   "initQuantity": 19,
+   "capacity": 38,
+   "minLevel": 0,
+   "holdingCost": 0.16,
+   "demands": [
+    19,
+    19,
+    19
+   ]
+  },
+  {
+   "x": 206,
+   "y": 151,
+   "initQuantity": 110,
+   "capacity": 165,
+   "minLevel": 0,
+   "holdingCost": 0.17,
+   "demands": [
+    55,
+    55,
+    55
+   ]
+  },
+  {
+   "x": 243,
+   "y": 453,
+   "initQuantity": 198,
+   "capacity": 297,
+   "minLevel": 0,
+   "holdingCost": 0.26,
+   "demands": [
+    99,
+    99,
+    99
+   ]
+  },
+  {
+   "x": 249,
+   "y": 67,
+   "initQuantity": 43,
+   "capacity": 86,
+   "minLevel": 0,
+   "holdingCost": 0.24,
+   "demands": [
+    43,
+    43,
+    43
+   ]
+  }
+ ]
+}

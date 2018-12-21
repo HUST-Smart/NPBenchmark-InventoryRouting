@@ -22,7 +22,6 @@
     <ProjectGuid>{6F05DAC1-4FEF-4D11-B177-4FB26A217AE8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Simulator</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -173,7 +172,7 @@
     <ClInclude Include="..\Solver\Common.h" />
     <ClInclude Include="..\Solver\Config.h" />
     <ClInclude Include="..\Solver\CsvReader.h" />
-    <ClInclude Include="..\Solver\GateAssignment.pb.h" />
+    <ClInclude Include="..\Solver\InventoryRouting.pb.h" />
     <ClInclude Include="..\Solver\LogSwitch.h" />
     <ClInclude Include="..\Solver\PbReader.h" />
     <ClInclude Include="..\Solver\Problem.h" />
@@ -184,7 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Solver\CsvReader.cpp" />
-    <ClCompile Include="..\Solver\GateAssignment.pb.cc" />
+    <ClCompile Include="..\Solver\InventoryRouting.pb.cc" />
     <ClCompile Include="..\Solver\Solver.cpp" />
     <ClCompile Include="..\Solver\Utility.cpp" />
     <ClCompile Include="Main.cpp" />

@@ -4,8 +4,8 @@
 /// note  : 1.	
 ////////////////////////////////
 
-#ifndef SMART_SZX_GATE_ASSIGNMENT_CSV_READER_H
-#define SMART_SZX_GATE_ASSIGNMENT_CSV_READER_H
+#ifndef SMART_QYM_INVENTORY_ROUTING_CSV_READER_H
+#define SMART_QYM_INVENTORY_ROUTING_CSV_READER_H
 
 
 #include <iostream>
@@ -16,10 +16,6 @@
 #include <vector>
 
 
-// [off] increase readability instead of stabilization in debug mode (avoid stack overflow).
-#define SMART_SZX_GATE_ASSIGNMENT_CSV_READER_RECURSIVE_VERSION  0
-
-
 namespace szx {
 
 class CsvReader {
@@ -27,20 +23,14 @@ public:
     using Row = std::vector<char*>;
 
 
-    static constexpr char CommaChar = ';';
-
-
     const std::vector<Row>& scan(std::ostringstream &oss) {
         oss << '\n'; // add a sentinel so that end of file check is only necessary in onNewLine().
         data = oss.str();
-        begin = const_cast<char*>(data.data());  // the const cast can be omitted since C++17.
-        end = begin + data.size();
+        cur = const_cast<char*>(data.data());  // the const cast can be omitted since C++17.
+        end = cur + data.size();
 
-        #if SMART_SZX_GATE_ASSIGNMENT_CSV_READER_RECURSIVE_VERSION
-        onNewLine(begin);
-        #else
-        onNewLine_opt(begin);
-        #endif // SMART_SZX_GATE_ASSIGNMENT_CSV_READER_RECURSIVE_VERSION
+        //onNewLine();
+        onNewLine_opt();
 
         return rows;
     }
@@ -51,74 +41,75 @@ public:
     }
 
 protected:
-    #if SMART_SZX_GATE_ASSIGNMENT_CSV_READER_RECURSIVE_VERSION
-    void onNewLine(char *s) {
-        while ((s != end) && (NewLineChars.find(*s) != NewLineChars.end())) { ++s; } // remove empty lines.
-        if (s == end) { return; }
+    void onNewLine() {
+        while ((cur != end) && (NewLineChars.find(*cur) != NewLineChars.end())) { ++cur; } // remove empty lines.
+        if (cur == end) { return; }
 
         rows.push_back(Row());
 
-        onSpace(s);
+        onSpace();
     }
 
-    void onSpace(char *s) {
-        while (SpaceChars.find(*s) != SpaceChars.end()) { ++s; } // trim spaces.
+    void onSpace() {
+        while (SpaceChars.find(*cur) != SpaceChars.end()) { ++cur; } // trim spaces.
 
-        onValue(s);
+        onValue();
     }
 
-    void onValue(char *s) {
-        rows.back().push_back(s);
+    void onValue() {
+        rows.back().push_back(cur);
 
-        char c = *s;
+        char c = *cur;
         if (EndCellChars.find(c) == EndCellChars.end()) {
-            while (EndCellChars.find(*(++s)) == EndCellChars.end()) {}
-            c = *s;
+            while (EndCellChars.find(*(++cur)) == EndCellChars.end()) {}
+            c = *cur;
 
-            char *space = s;
+            char *space = cur;
             while (SpaceChars.find(*(space - 1)) != SpaceChars.end()) { --space; }
             *space = 0; // trim spaces and remove comma or line ending.
         } else { // empty cell.
-            *s = 0;
+            *cur = 0;
         }
 
-        ++s;
-        (NewLineChars.find(c) != NewLineChars.end()) ? onNewLine(s) : onSpace(s);
+        ++cur;
+        (NewLineChars.find(c) != NewLineChars.end()) ? onNewLine() : onSpace();
     }
-    #else // in case there is no Tail-Call Optimization which leads to the stack overflow.
-    void onNewLine_opt(char *s) {
-Label_OnNewLine:
-        while ((s != end) && (NewLineChars.find(*s) != NewLineChars.end())) { ++s; } // remove empty lines.
-        if (s == end) { return; }
+
+    // in case there is no Tail-Call Optimization which leads to the stack overflow.
+    void onNewLine_opt() {
+    Label_OnNewLine:
+        while ((cur != end) && (NewLineChars.find(*cur) != NewLineChars.end())) { ++cur; } // remove empty lines.
+        if (cur == end) { return; }
 
         rows.push_back(Row());
+        //goto Label_OnSpace;
 
-Label_OnSpace:
-        while (SpaceChars.find(*s) != SpaceChars.end()) { ++s; } // trim spaces.
+    Label_OnSpace:
+        while (SpaceChars.find(*cur) != SpaceChars.end()) { ++cur; } // trim spaces.
+        //goto Label_OnValue;
 
-//Label_OnValue:
-        rows.back().push_back(s);
+    //Label_OnValue:
+        rows.back().push_back(cur);
 
-        char c = *s;
+        char c = *cur;
         if (EndCellChars.find(c) == EndCellChars.end()) {
-            while (EndCellChars.find(*(++s)) == EndCellChars.end()) {}
-            c = *s;
+            while (EndCellChars.find(*(++cur)) == EndCellChars.end()) {}
+            c = *cur;
 
-            char *space = s;
+            char *space = cur;
             while (SpaceChars.find(*(space - 1)) != SpaceChars.end()) { --space; }
             *space = 0; // trim spaces and remove comma or line ending.
         } else { // empty cell.
-            *s = 0;
+            *cur = 0;
         }
 
-        ++s;
+        ++cur;
         if (NewLineChars.find(c) != NewLineChars.end()) {
             goto Label_OnNewLine;
         } else {
             goto Label_OnSpace;
         }
     }
-    #endif // SMART_SZX_GATE_ASSIGNMENT_CSV_READER_RECURSIVE_VERSION
 
     // TODO[szx][2]: handle quote (comma will not end cell).
     // EXTEND[szx][5]: make trim space configurable.
@@ -127,7 +118,7 @@ Label_OnSpace:
     static const std::set<char> SpaceChars;
     static const std::set<char> EndCellChars;
 
-    char *begin;
+    char *cur; // the cursor and current char.
     const char *end;
 
     std::string data;
@@ -137,4 +128,4 @@ Label_OnSpace:
 }
 
 
-#endif // SMART_SZX_GATE_ASSIGNMENT_CSV_READER_H
+#endif // SMART_QYM_INVENTORY_ROUTING_CSV_READER_H

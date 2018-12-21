@@ -39,12 +39,9 @@ public:
     };
 
     struct InstanceTrait {
-        int horizonLen = 24 * 60;
-        Interval<int> gateNum = Interval<int>(60, Problem::MaxGateNum);
-        Interval<int> bridgeNum = Interval<int>(20, Problem::MaxBridgeNum);
-        Interval<int> flightNum = Interval<int>(100, Problem::MaxFlightNum);
-        Interval<int> incompatibleGateNumPerFlight = Interval<int>(0, 8);
-        Interval<int> turnaroundLen = Interval<int>(40, 8 * 60);
+        int depotNum = 1;
+        int vehicleNum = 1;
+        int holdingCostScale = 1;
     };
     #pragma endregion Type
 
@@ -79,11 +76,9 @@ public:
     void parallelBenchmark(int repeat);
 
 
-    void generateInstance(const InstanceTrait &trait);
-    void generateInstance() {
-        InstanceTrait trait;
-        generateInstance(trait);
-    }
+    void generateInstance(const InstanceTrait &trait = InstanceTrait());
+    static void convertInstanceToPb(const String &filePath, const InstanceTrait &trait = InstanceTrait());
+    static void convertAllInstancesToPb(const InstanceTrait &trait = InstanceTrait());
     #pragma endregion Method
 
     #pragma region Field

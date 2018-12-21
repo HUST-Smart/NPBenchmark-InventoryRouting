@@ -4,8 +4,8 @@
 /// note  : 1.	
 ////////////////////////////////
 
-#ifndef SMART_SZX_GATE_ASSIGNMENT_COMMON_H
-#define SMART_SZX_GATE_ASSIGNMENT_COMMON_H
+#ifndef SMART_QYM_INVENTORY_ROUTING_COMMON_H
+#define SMART_QYM_INVENTORY_ROUTING_COMMON_H
 
 
 #include <vector>
@@ -18,10 +18,12 @@ namespace szx {
 
 // zero-based consecutive integer identifier.
 using ID = int;
-// the unit of width and height.
-using Length = int;
+// the unit of cost.
+using Price = double;
+// the unit of inventory level.
+using Quantity = int;
 // the unit of x and y coordinates.
-using Coord = Length;
+using Coord = int;
 // the unit of elapsed computational time.
 using Duration = int;
 // number of neighborhood moves in local search.
@@ -48,4 +50,4 @@ public:
 }
 
 
-#endif // SMART_SZX_GATE_ASSIGNMENT_COMMON_H
+#endif // SMART_QYM_INVENTORY_ROUTING_COMMON_H
