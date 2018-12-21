@@ -207,9 +207,9 @@ void Solver::record() const {
     String bestObj, refObj, refTime;
     for (auto r = rows.begin(); r != rows.end(); ++r) {
         if (env.friendlyInstName() != r->front()) { continue; }
-        bestObj = (*r)[0];
-        refObj = (*r)[1];
-        refTime = (*r)[2];
+        bestObj = (*r)[1];
+        refObj = (*r)[2];
+        refTime = (*r)[3];
         //double opt = stod(bestObj);
         break;
     }

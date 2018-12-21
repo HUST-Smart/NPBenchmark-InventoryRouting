@@ -147,7 +147,8 @@ public:
         String visualizPath(const T &msg) const { return DefaultVisualizationDir() + friendlyInstName() + "." + localTime + "." + std::to_string(msg) + ".html"; }
         String friendlyInstName() const { // friendly to file system (without special char).
             auto pos = instPath.find_last_of('/');
-            return (pos == String::npos) ? instPath : instPath.substr(pos + 1);
+            String filename = (pos == String::npos) ? instPath : instPath.substr(pos + 1);
+            return filename.substr(0, filename.length() - 5); // drop ".json".
         }
         String friendlyLocalTime() const { // friendly to human.
             return localTime.substr(0, 4) + "-" + localTime.substr(4, 2) + "-" + localTime.substr(6, 2)
