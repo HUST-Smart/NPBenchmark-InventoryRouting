@@ -249,3 +249,4 @@ ModelManifest.xml
 /Deploy/log.csv
 /Deploy/Solution/*.json*
 /Deploy/Visualization/*.html
+/Deploy/Instance/abs
