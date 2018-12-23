@@ -214,15 +214,15 @@ void Solver::record() const {
         break;
     }
 
-    double obj = output.totalCost;
     double checkerObj = -1;
     bool feasible = check(checkerObj);
+    double objDiff = round(output.totalCost * Problem::CheckerObjScale - checkerObj) / Problem::CheckerObjScale;
 
     // record basic information.
     log << env.friendlyLocalTime() << ","
         << env.rid << ","
         << env.instPath << ","
-        << feasible << "," << (obj - checkerObj) << ","
+        << feasible << "," << objDiff << ","
         << output.totalCost << ","
         << bestObj << ","
         << refObj << ","
@@ -262,10 +262,9 @@ bool Solver::check(double &checkerObj) const {
         RunOutOfStockError = 0x10
     };
 
-    static constexpr double ObjScale = 1000;
     int errorCode = System::exec("Checker.exe " + env.instPath + " " + env.solutionPathWithTime());
     if (errorCode > 0) {
-        checkerObj = errorCode / ObjScale;
+        checkerObj = errorCode;
         return true;
     }
     errorCode = ~errorCode;

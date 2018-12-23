@@ -55,6 +55,7 @@ public:
 
     #pragma region Constant
 public:
+    static constexpr double CheckerObjScale = 1000;
     #pragma endregion Constant
 
     #pragma region Constructor

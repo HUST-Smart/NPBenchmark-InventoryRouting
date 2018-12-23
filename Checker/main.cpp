@@ -14,8 +14,6 @@ using namespace szx;
 using namespace pb;
 
 int main(int argc, char *argv[]) {
-    static constexpr double DefaultDoubleGap = 0.001;
-
     enum CheckerFlag {
         IoError = 0x0,
         FormatError = 0x1,
